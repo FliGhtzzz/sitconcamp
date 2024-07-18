@@ -1,18 +1,18 @@
 #v0.2
 import requests
 import telebot
-bot = telebot.TeleBot("7285941230:AAHes-JXLZceO-aKgAf6hpb_c0wJTXYCjdo")
+bot = telebot.TeleBot("TGBOT")
 
 def checkwhether(pos):
     url = "https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001"
     params = {
-        "Authorization": "CWA-35C0F6C5-330D-43D7-995D-830446D0EAD5",
+        "Authorization": "APIKEY",
         "format": "json",
         "locationName": "pos"  #地點(要以縣市來輸入) 要大寫！
     }
 
     headers = {
-        "Authorization": "CWA-35C0F6C5-330D-43D7-995D-830446D0EAD5"
+        "Authorization": "APIKEY"
     }
 
     response = requests.get(url, headers=headers, params=params)
