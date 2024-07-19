@@ -7,7 +7,6 @@ bot = telebot.TeleBot("TGTOKEN")
 
 print("BOT opened")
 temp=int(0)
-positions=["宜蘭縣","花蓮縣","臺東縣","澎湖縣","金門縣","連江縣","臺北市","新北市","桃園市","臺中市","臺南市","高雄市","基隆市","新竹縣","新竹市","苗栗縣","彰化縣","南投縣","雲林縣","嘉義縣","嘉義市","屏東縣"]
 calling=False
 location=" "
 entergoal=True
@@ -34,6 +33,7 @@ def contry_markup():
     markup=InlineKeyboardMarkup()
     markup.row_width = 3
     for i in range(len(positions)//3):
+        i*=3
         markup.add(InlineKeyboardButton(positions[i], callback_data=positions[i]),
                    InlineKeyboardButton(positions[i+1], callback_data=positions[i+1]),
                    InlineKeyboardButton(positions[i+2], callback_data=positions[i+2]))
