@@ -1,4 +1,4 @@
-#v0.4 main_update : 人性化更新
+#v0.3 main_update: 可以在客戶輸入錯誤地點時報錯
 import requests
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import telebot
@@ -62,7 +62,7 @@ def check_now_weather(half:bool, pos: str):
                     for location in location_data:
                         # 取得溫度資訊
                         if half == "True":
-                            print("true")   
+                            print("true")
                             weather = location['weatherElement'][0]['time'][0]['parameter']['parameterName']
                             rain_percent=location['weatherElement'][1]['time'][0]['parameter']['parameterName']
                             MinT=location['weatherElement'][2]['time'][0]['parameter']['parameterName']
@@ -103,7 +103,7 @@ def get_pos(message):
             bot.send_message(message.chat.id, "請問您想去半天還是整天呢",reply_markup=gen_markup())
             bot.send_message(message.chat.id, "若欲放棄出去遊玩請按下--> /home \n若是想換目的地請直接輸出新的目的地")
     if message.text == "/start":
-        bot.reply_to(message, "可以在輸入縣市後,再確認是半天或整天給該地點的天氣以及合適的行程以及穿搭 👾🐣 \n目前僅有包含以下縣市 \n宜蘭縣，花蓮縣，臺東縣，澎湖縣，金門縣，連江縣，臺北市，新北市，桃園市，臺中市，臺南市，高雄市，基隆市，新竹縣，新竹市，苗栗縣，彰化縣，南投縣，雲林縣，嘉義縣，嘉義市，屏東縣\n支援的指令有 /start : 使用說明 | /debug : 報錯說明 | /home : 關閉本次規劃")
+        bot.reply_to(message, "可以在輸入縣市後,再確認是半天或整天給該地點的天氣以及合適的行程以及穿搭 👾🐣 \n目前僅有包含以下縣市 \n宜蘭縣，花蓮縣，臺東縣，澎湖縣，金門縣，連江縣，臺北市，新北市，桃園市，臺中市，臺南市，高雄市，基隆市，新竹縣，新竹市，苗栗縣，彰化縣，南投縣，雲林縣，嘉義縣，嘉義市，屏東縣\n支援的指令有\n/start : 使用說明 | /debug : 報錯說明 | /home : 關閉本次規劃")
     if message.text == "/debug":
         bot.reply_to(message, "可能是您的輸入有問題，台跟臺要多加注意喔!🤔") 
     if message.text == "/home":
