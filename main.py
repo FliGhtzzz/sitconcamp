@@ -6,7 +6,7 @@ import google.generativeai as genai
 import random
 import threading
 
-
+#TODO fill in keys
 TELEBOT_KEY = " "
 CWA_KEY = " "
 
@@ -141,7 +141,6 @@ bot = telebot.TeleBot(f"{TELEBOT_KEY}")
 print("BOT opened")
 
 
-import threading
 # 設定要編輯的訊息 ID
 messages_to_edit = {}
 color_box = "🔴🟠🟡🟢🔵🟣⚪️🟤🤡"
